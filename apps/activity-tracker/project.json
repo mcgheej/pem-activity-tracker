@@ -8,18 +8,25 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/activity-tracker",
         "index": "apps/activity-tracker/src/index.html",
         "browser": "apps/activity-tracker/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/activity-tracker/tsconfig.app.json",
         "assets": [
           "apps/activity-tracker/src/favicon.ico",
           "apps/activity-tracker/src/assets"
         ],
-        "styles": ["apps/activity-tracker/src/styles.css"],
+        "styles": [
+          "@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/activity-tracker/src/styles.css"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -66,7 +73,9 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
         "lintFilePatterns": [
           "apps/activity-tracker/**/*.ts",
@@ -76,7 +85,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/activity-tracker/jest.config.ts"
       }
