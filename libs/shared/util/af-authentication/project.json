@@ -1,0 +1,20 @@
+{
+  "name": "af-authentication",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/util/af-authentication/src",
+  "prefix": "pem-activity-tracker",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/util/af-authentication/**/*.ts",
+          "libs/shared/util/af-authentication/**/*.html"
+        ]
+      }
+    }
+  }
+}

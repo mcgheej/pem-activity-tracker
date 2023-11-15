@@ -4,6 +4,7 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
+import { provideAfAuthentication } from '@pem-activity-tracker/af-authentication';
 import { firebaseConfig } from '@pem-activity-tracker/firebase-config';
 import { appRoutes } from './app.routes';
 
@@ -16,5 +17,6 @@ export const appConfig: ApplicationConfig = {
       provideAuth(() => getAuth()),
       provideFirestore(() => getFirestore()),
     ]),
+    provideAfAuthentication(),
   ],
 };

@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@pem-activity-tracker/af-authentication": [
+        "libs/shared/util/af-authentication/src/index.ts"
+      ],
       "@pem-activity-tracker/firebase-config": [
         "libs/activity-tracker/util/firebase-config/src/index.ts"
       ],
