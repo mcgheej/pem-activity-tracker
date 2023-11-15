@@ -1,1 +1,39 @@
-<p>shell works!</p>
+<div *ngIf="vm$ | async as vm" class="flex flex-col h-full">
+  <pem-navbar
+    [navProps]="navProps"
+    [loggedIn]="vm.loggedIn"
+    (toggleSidenav)="sidenav.toggle()"
+    (logoutClick)="onLogout(sidenav)"
+  ></pem-navbar>
+  <div class="flex-grow-1 h-full">
+    <mat-sidenav-container class="h-full">
+      <mat-sidenav class="w-64" #sidenav (keydown.escape)="sidenav.close()">
+        <mat-nav-list>
+          <ng-container *ngFor="let props of navProps">
+            <mat-list-item *ngIf="vm.loggedIn === props.loggedInRequired">
+              <a
+                matListItemTitle
+                class="no-underline text-white hover:text-gray-300"
+                [routerLink]="props.url"
+                (click)="sidenav.close()"
+                >{{ props.title }}</a
+              >
+            </mat-list-item>
+          </ng-container>
+          <mat-list-item
+            *ngIf="vm.loggedIn"
+            class="no-underline text-white hover:text-gray-300"
+            (click)="onLogout(sidenav)"
+          >
+            Logout
+          </mat-list-item>
+        </mat-nav-list>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <main class="w-full h-full">
+          <router-outlet></router-outlet>
+        </main>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</div>

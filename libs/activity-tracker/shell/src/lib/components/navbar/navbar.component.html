@@ -1,0 +1,33 @@
+<nav
+  class="flex flex-wrap items-center w-full py-0 px-4 text-base sm:text-xl font-medium text-gray-700 bg-white"
+>
+  <div class="sm:hidden">
+    <button #button mat-icon-button (click)="onSidenavToggleClick(button)">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div class="hidden sm:block h-12 w-1"></div>
+  <a class="mt-1" routerLink="./home">Accruals</a>
+  <span class="hidden sm:block sm:flex-auto"></span>
+  <ul
+    class="hidden sm:flex sm:text-base sm:text-gray-700 sm:justify-between sm:pt-0"
+  >
+    <li *ngFor="let props of navProps">
+      <a
+        *ngIf="loggedIn === props.loggedInRequired"
+        class="p-4 py-2 block hover:text-purple-400"
+        [routerLink]="props.url"
+        routerLinkActive="active-link"
+        >{{ props.title }}</a
+      >
+    </li>
+    <li *ngIf="loggedIn">
+      <div
+        class="p-4 py-2 block hover:text-purple-400 cursor-pointer select-none box-border"
+        (click)="logoutClick.emit()"
+      >
+        Logout
+      </div>
+    </li>
+  </ul>
+</nav>
