@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@pem-activity-tracker/firebase-config": [
+        "libs/activity-tracker/util/firebase-config/src/index.ts"
+      ],
       "@pem-activity-tracker/shell": [
         "libs/activity-tracker/shell/src/index.ts"
       ]
