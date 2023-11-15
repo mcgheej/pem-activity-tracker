@@ -1,0 +1,20 @@
+{
+  "name": "login",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/activity-tracker/feature/login/src",
+  "prefix": "pem",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/activity-tracker/feature/login/**/*.ts",
+          "libs/activity-tracker/feature/login/**/*.html"
+        ]
+      }
+    }
+  }
+}

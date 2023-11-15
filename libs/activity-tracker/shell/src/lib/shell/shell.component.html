@@ -5,8 +5,8 @@
     (toggleSidenav)="sidenav.toggle()"
     (logoutClick)="onLogout(sidenav)"
   ></pem-navbar>
-  <div class="flex-grow-1 h-full">
-    <mat-sidenav-container class="h-full">
+  <div class="flex flex-col h-full">
+    <mat-sidenav-container class="grow">
       <mat-sidenav class="w-64" #sidenav (keydown.escape)="sidenav.close()">
         <mat-nav-list>
           <ng-container *ngFor="let props of navProps">
@@ -35,5 +35,9 @@
         </main>
       </mat-sidenav-content>
     </mat-sidenav-container>
+    <div
+      *ngIf="vm.loggedIn"
+      class="h-8 bg-white border border-t-indigo-500"
+    ></div>
   </div>
 </div>

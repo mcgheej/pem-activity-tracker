@@ -24,6 +24,9 @@
       "@pem-activity-tracker/home": [
         "libs/activity-tracker/feature/home/src/index.ts"
       ],
+      "@pem-activity-tracker/login": [
+        "libs/activity-tracker/feature/login/src/index.ts"
+      ],
       "@pem-activity-tracker/shell": [
         "libs/activity-tracker/shell/src/index.ts"
       ]
