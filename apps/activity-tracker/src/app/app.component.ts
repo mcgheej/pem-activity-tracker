@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { ShellComponent } from '@pem-activity-tracker/shell';
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
+  imports: [RouterModule, ShellComponent],
   selector: 'pem-activity-tracker-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  template: `<pem-shell></pem-shell>`,
 })
-export class AppComponent {
-  title = 'activity-tracker';
-}
+export class AppComponent {}
