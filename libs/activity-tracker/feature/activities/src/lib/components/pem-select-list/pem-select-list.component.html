@@ -1,0 +1,10 @@
+<div class="w-full h-full overflow-hidden">
+  <div
+    *ngFor="let item of items"
+    [ngClass]="getItemBackgroundColor(item)"
+    (click)="onItemClick(item)"
+    class="h-8 flex items-center p-1 cursor-pointer select-none"
+  >
+    {{ item.name }}
+  </div>
+</div>

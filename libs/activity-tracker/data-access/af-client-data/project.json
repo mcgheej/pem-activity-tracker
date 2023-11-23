@@ -1,0 +1,20 @@
+{
+  "name": "af-client-data",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/activity-tracker/data-access/af-client-data/src",
+  "prefix": "pem-activity-tracker",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/activity-tracker/data-access/af-client-data/**/*.ts",
+          "libs/activity-tracker/data-access/af-client-data/**/*.html"
+        ]
+      }
+    }
+  }
+}

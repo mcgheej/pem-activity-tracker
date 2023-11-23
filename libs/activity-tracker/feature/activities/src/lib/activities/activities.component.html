@@ -1,0 +1,52 @@
+<div *ngIf="vm$ | async as vm" class="w-full h-full">
+  <div class="w-full h-full grid grid-cols-pem3 gap-1 p-4">
+    <div
+      class="border-3 rounded-lg w-full h-full shadow-md bg-white grid grid-rows-[auto_1fr]"
+    >
+      <div
+        class="h-8 flex items-center p-1 font-semibold bg-transparent select-none border-b-2 border-slate-500"
+      >
+        Clients
+      </div>
+      <div class="h-full">
+        <pem-select-list
+          [items]="vm.clients"
+          [selectedItem]="vm.selectedClient"
+          (itemClick)="onSelectClient($event, vm.selectedClient)"
+          class="h-full overflow-hidden"
+        ></pem-select-list>
+      </div>
+    </div>
+    <div
+      *ngIf="db.projects$ | async as projects"
+      class="border-3 rounded-lg w-full h-full shadow-md bg-white grid grid-rows-[auto_1fr]"
+    >
+      <div
+        class="h-8 flex items-center p-1 font-semibold bg-transparent select-none border-b-2 border-slate-500"
+      >
+        Projects
+      </div>
+      <pem-select-list
+        [items]="projects"
+        [selectedItem]="vm.selectedProject"
+        (itemClick)="
+          onSelectProject($event, vm.selectedClient, vm.selectedProject)
+        "
+      ></pem-select-list>
+    </div>
+    <div
+      class="border-3 rounded-lg w-full h-full shadow-md bg-white grid grid-rows-[auto_1fr]"
+    >
+      <div
+        class="h-8 flex items-center p-1 font-semibold bg-transparent select-none border-b-2 border-slate-500"
+      >
+        Activities
+      </div>
+      <div>
+        <div *ngFor="let activity of db.activities$ | async">
+          {{ activity.name }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

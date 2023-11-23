@@ -7,6 +7,7 @@ import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Router, RouterModule } from '@angular/router';
 import { AfAuthenticationService } from '@pem-activity-tracker/af-authentication';
+import { AfClientDataService } from '@pem-activity-tracker/af-client-data';
 import { map } from 'rxjs';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { navProps } from './nav-props';
@@ -30,6 +31,7 @@ import { navProps } from './nav-props';
 })
 export class ShellComponent {
   router = inject(Router);
+  afClientsData = inject(AfClientDataService);
 
   private afAuth = inject(AfAuthenticationService);
 

@@ -15,6 +15,9 @@ module.exports = {
         'logo-blue': '#0090c7',
         'logo-orange': '#d45207',
       },
+      gridTemplateColumns: {
+        pem3: 'repeat(2, minmax(250px, 300px)) minmax(300px, 1fr)',
+      },
     },
   },
   plugins: [],

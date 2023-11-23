@@ -15,8 +15,17 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@pem-activity-tracker/activities": [
+        "libs/activity-tracker/feature/activities/src/index.ts"
+      ],
+      "@pem-activity-tracker/activity-tracker-types": [
+        "libs/activity-tracker/util/activity-tracker-types/src/index.ts"
+      ],
       "@pem-activity-tracker/af-authentication": [
         "libs/shared/util/af-authentication/src/index.ts"
+      ],
+      "@pem-activity-tracker/af-client-data": [
+        "libs/activity-tracker/data-access/af-client-data/src/index.ts"
       ],
       "@pem-activity-tracker/firebase-config": [
         "libs/activity-tracker/util/firebase-config/src/index.ts"
