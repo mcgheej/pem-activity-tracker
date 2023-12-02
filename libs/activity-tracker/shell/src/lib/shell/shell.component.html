@@ -1,11 +1,12 @@
-<div *ngIf="vm$ | async as vm" class="flex flex-col h-full">
+<!-- <div *ngIf="vm$ | async as vm" class="flex flex-col h-full"> -->
+<div *ngIf="vm$ | async as vm" class="h-full grid grid-rows-[auto_1fr]">
   <pem-navbar
     [navProps]="navProps"
     [loggedIn]="vm.loggedIn"
     (toggleSidenav)="sidenav.toggle()"
     (logoutClick)="onLogout(sidenav)"
   ></pem-navbar>
-  <div class="flex flex-col h-full">
+  <div class="flex flex-col">
     <mat-sidenav-container class="grow">
       <mat-sidenav class="w-64" #sidenav (keydown.escape)="sidenav.close()">
         <mat-nav-list>
